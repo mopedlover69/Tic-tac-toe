@@ -1,0 +1,314 @@
+:root {
+    --green: #48ba48;
+    --yellow: #ffd854;
+    --red: #fd4646;
+    --blue: #3498db;
+}
+
+header {
+    margin-bottom: 3rem;
+    font-family: "DejaVu Sans Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header, header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-family: "DejaVu Sans Light", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#buttons button {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 1.2rem;
+
+}
+
+#br {
+    position: relative;
+    width: 220px;
+    height: 60px;
+    font-size: 1.2rem;
+    border: 2px solid #444;
+    background: transparent;
+    color: #111;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+#br span {
+    position: relative;
+    z-index: 3; /* Text über allen Ebenen */
+    pointer-events: none;
+}
+
+/* Linke Farbe */
+#br::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--blue);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Rechte Farbe */
+#br::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--red);
+    transform: translateX(100%);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0;
+    z-index: 2;
+}
+
+#br:hover::before,
+#br:hover::after {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#br:hover {
+    color: white;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+
+/* --- Grün/Rot (gr) --- */
+
+#gr {
+    position: relative;
+    width: 220px;
+    height: 60px;
+    font-size: 1.2rem;
+    border: 2px solid #444;
+    background: transparent;
+    color: #111;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+#gr span {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+}
+
+#gr::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--green);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+}
+
+#gr::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--red);
+    transform: translateX(100%);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0;
+    z-index: 2;
+}
+
+#gr:hover::before,
+#gr:hover::after {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#gr:hover {
+    color: white;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+
+/* --- Gelb/Grün (yg) --- */
+
+#yg {
+    position: relative;
+    width: 220px;
+    height: 60px;
+    font-size: 1.2rem;
+    border: 2px solid #444;
+    background: transparent;
+    color: #111;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+#yg span {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+}
+
+#yg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--yellow);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+}
+
+#yg::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--green);
+    transform: translateX(100%);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0;
+    z-index: 2;
+}
+
+#yg:hover::before,
+#yg:hover::after {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#yg:hover {
+    color: white;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+#board {
+    margin-left: 31.7%;
+}
+
+
+#board div {
+    cursor: pointer;
+    width: 220px;
+    height: 220px;
+    outline: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.r1 {
+    grid-row: 1;
+    grid-column: 1 / span 3;
+}
+
+.r2 {
+    grid-row: 2;
+    grid-column: 1 / span 3;
+}
+
+.r3 {
+    grid-row: 3;
+    grid-column: 1 / span 3;
+}
+
+#pl1, #pl2, #draw {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pl1 h1, #pl2 h1, #draw h1 {
+    padding: 2rem;
+
+    border: 5px solid pink;
+    border-radius: 1rem;
+
+    font-family: "DejaVu Sans Bold", Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+#pl1 h1:hover, #pl2 h1:hover, #draw h1:hover {
+    cursor: pointer;
+    background-color: lightpink;
+    transform: scale(1.2);
+    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.2);
+    transition: all .4s ease-in-out;
+}
+
+#pl2 h1 {
+    border: 5px solid lightgreen;
+}
+
+#draw h1 {
+    border: 5px solid lightblue;
+}
+
+#pl2 h1:hover {
+    background-color: lightgreen;
+}
+
+#draw h1:hover {
+    background-color: lightblue;
+}
+
+#count-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 5px solid lightgreen;
+    border-radius: 2rem;
+
+    font-family: "DejaVu Sans Bold", Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 0.3s ease-in-out;
+    color: #4c804c;
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        background-color: transparent;
+        transform: scale(1);
+    }
+    to {
+        background-color: lightgreen;
+        transform: scale(0);
+    }
+}
